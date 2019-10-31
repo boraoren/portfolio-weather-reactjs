@@ -36,3 +36,6 @@ awsconfiguration.json
 
 #intellij
 .idea
+
+#jest
+.jest-test-results.json
