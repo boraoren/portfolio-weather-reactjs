@@ -13,10 +13,6 @@ describe('My work', () => {
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-  test('How to manually fail tests', done => {
-    done.fail(new Error('I want my test to fail'))
-  })
-
 })
 
 
