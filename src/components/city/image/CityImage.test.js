@@ -1,9 +1,10 @@
-// @flow
+// @ts-check
+// @ts-ignore
+import React from 'react'
 import {render} from '@testing-library/react';
-import React from 'react';
-import image from './melbourne.png';
+// @ts-ignore
+import image from './melbourne.png'
 import CityImage from "./CityImage";
-
 
 let getByTestId
 const dataTestId = 'cityImageId'

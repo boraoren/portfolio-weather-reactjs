@@ -1,6 +1,5 @@
 import React from 'react';
-import App from "./App";
-
+import App from './App'
 export default { title: 'Button' };
 
 export const withText = () => <button>Hello Button</button>;

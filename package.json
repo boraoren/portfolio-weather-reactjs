@@ -5,6 +5,7 @@
   "dependencies": {
     "@aws-amplify/api": "^1.2.4",
     "@aws-amplify/pubsub": "^1.2.4",
+    "@types/jest": "^24.0.21",
     "aws-amplify-react": "^2.5.4",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
@@ -19,8 +20,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test:generate-output": "react-scripts test --json --outputFile=.jest-test-results.json",
-    "flow": "flow"
+    "test:generate-output": "react-scripts test --json --outputFile=.jest-test-results.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,8 +46,7 @@
     "@storybook/react": "^5.2.5",
     "@testing-library/react": "^9.3.1",
     "babel-loader": "^8.0.6",
-    "cz-conventional-changelog": "^3.0.2",
-    "flow-bin": "^0.111.0"
+    "cz-conventional-changelog": "^3.0.2"
   },
   "config": {
     "commitizen": {

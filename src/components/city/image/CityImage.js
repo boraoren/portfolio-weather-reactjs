@@ -1,14 +1,22 @@
-// @flow
+// @ts-check
+// @ts-ignore
 import React from 'react'
+/**
+ * @typedef {Object} Props
+ * @property {string} src - image url
+ */
 
-type Props = {
-    src: string,
-};
+ /**
+ * Show City Image
+ * @module CityImage
+ * @param {Props} props
+ */
+const CityImage = (props) => {
 
+    const defaultAlt = 'City Image';
 
-const CityImage = (props: Props) => {
     return(
-        <img data-testid={'cityImageId'} src={props.src} alt={'City Image'}/>
+        <img data-testid={'cityImageId'} src={props.src} alt={defaultAlt}/>
     )
 }
 
