@@ -2,11 +2,10 @@
 // @ts-ignore
 import React from 'react'
 import CityImage from "./CityImage";
-//@ts-ignore
-import src from './melbourne.png'
-
 export default { title: 'city/image' };
 const jest = {jest:['CityImage']};
+
+const src = "static/media/melbourne"
 
 export const withImage = () => {
     return(<CityImage src={src}/>)

@@ -2,17 +2,17 @@
 // @ts-ignore
 import React from 'react'
 import {render} from '@testing-library/react';
-// @ts-ignore
-import image from './melbourne.png'
 import CityImage from "./CityImage";
 
 let getByTestId
 const dataTestId = 'cityImageId'
 const altAttribute = 'City Image'
-const srcAttribute = 'melbourne.png'
+const expectedSrc = 'static/media/melbournex300.png'
+const src = "static/media/melbourne"
+
 
 beforeEach(() => {
-    const rendered = render(<CityImage src={image}/>)
+    const rendered = render(<CityImage src={src}/>)
     getByTestId = rendered.getByTestId
 })
 
@@ -23,7 +23,7 @@ describe('city', () => {
         it('has image', () => {
             expect(getByTestId(dataTestId)
                 .getAttribute('src'))
-                .toBe(srcAttribute)
+                .toBe(expectedSrc)
         })
 
         it('alt value is ' + altAttribute, () => {

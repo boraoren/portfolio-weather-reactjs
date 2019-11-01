@@ -69,3 +69,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### Testing
 npm run test:generate-output -- --watch
+
+### Notes
+https://github.com/Aljullu/react-lazy-load-image-component#readme
