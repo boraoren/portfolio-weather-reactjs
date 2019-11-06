@@ -6,8 +6,8 @@ import { getByTestId } from '@testing-library/dom'
 import { render } from '@testing-library/react'
 
 import '@testing-library/jest-dom/extend-expect'
-import {toHaveTextContent} from '@testing-library/jest-dom'
-expect.extend({toHaveTextContent})
+import {toHaveTextContent,toHaveStyle} from '@testing-library/jest-dom'
+expect.extend({toHaveTextContent,toHaveStyle})
 
 describe('weather', ()=>{
     describe('degree',()=>{
@@ -16,6 +16,16 @@ describe('weather', ()=>{
             const getByTestId = rendered.getByTestId
             expect(getByTestId('weatherDegreeId'))
             .toHaveTextContent('26°')
+        })
+
+        it('size is 40px',()=>{
+            const rendered = render(<WeatherDegree value={'26°'}/>)
+            const getByTestId = rendered.getByTestId
+            expect(getByTestId('weatherDegreeId'))
+            .toHaveStyle(`
+                font-size:40px;
+            `)
+
         })
     })
 })
