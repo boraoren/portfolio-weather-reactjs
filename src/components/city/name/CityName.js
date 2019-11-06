@@ -15,7 +15,6 @@ const Text = styled.span`
 * @module CityName
 * @param Props props
  */
-
 const CityName = (props) => {
     return(
         <Text data-testid='cityNameId'>{props.text}</Text>

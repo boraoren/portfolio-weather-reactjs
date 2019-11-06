@@ -19,6 +19,7 @@ const Image = styled.img`
  * @typedef {Object} Props
  * @property {string} src - image url
  */
+
  /**
  * Show City Image
  * @module CityImage

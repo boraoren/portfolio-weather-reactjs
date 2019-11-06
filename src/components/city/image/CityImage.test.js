@@ -12,6 +12,7 @@ const src = "static/media/melbourne"
 
 
 beforeEach(() => {
+    /** @type import('@testing-library/react').RenderResult */
     const rendered = render(<CityImage src={src}/>)
     getByTestId = rendered.getByTestId
 })
