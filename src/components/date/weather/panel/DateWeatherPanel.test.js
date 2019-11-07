@@ -10,6 +10,7 @@ import '@testing-library/jest-dom/extend-expect'
 describe('date',()=>{
     describe('weather',()=>{
         describe('panel', ()=>{
+
             it('has weatherIcon component',()=>{
                 const rendered = render(<DateWeatherPanel/>)
                 const getByTestId = rendered.getByTestId
@@ -33,6 +34,8 @@ describe('date',()=>{
                 expect(getByTestId('dateWeatherPanel'))
                 .toContainElement(dateText)
             })
+
+            
         })
     })
 })
