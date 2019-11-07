@@ -1,3 +1,5 @@
+// @ts-check
+// @ts-ignore
 import React from 'react'
 import styled from 'styled-components'
 
@@ -13,7 +15,7 @@ const Text = styled.span`
 /**
 * Show City Name
 * @module CityName
-* @param Props props
+* @param {Props} props
  */
 const CityName = (props) => {
     return(
