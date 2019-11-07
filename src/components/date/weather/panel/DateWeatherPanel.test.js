@@ -70,18 +70,30 @@ describe('date',()=>{
             })
 
             describe('dateText component',()=>{
+
                 it('exists', ()=>{
                     const {getByTestId} = renderDateWeatherPanel()
                     const dateText = getByTestId('dateTextId')
                     expect(getByTestId('dateWeatherPanel'))
                     .toContainElement(dateText)
                 })
+
                 it('value is Wednesday',()=>{
                     const {getByTestId} = renderDateWeatherPanel()
                     const dateText = getByTestId('dateTextId')
                     expect(dateText)
                     .toHaveTextContent(/^Wednesday$/)
                 })
+
+                it('color is white', ()=>{
+                    const {getByTestId} = renderDateWeatherPanel()
+                    const dateText = getByTestId('dateTextId')
+                    expect(dateText)
+                    .toHaveStyle(`
+                        color:white;
+                    `)
+                })
+
             })
 
             it('background color is black',()=>{
