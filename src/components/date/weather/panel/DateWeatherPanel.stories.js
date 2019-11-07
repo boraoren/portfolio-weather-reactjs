@@ -7,7 +7,10 @@ export default {title: 'date/weather/panel'}
 const jest = {jest:['DateWeatherPanel']}
 
 export const dateWeatherPanel = () => {
-    return <DateWeatherPanel/>
+    return <DateWeatherPanel
+                weatherIconType={'wi wi-day-sunny'}
+                weatherDegreeValue={'26°'}
+                dateTextValue={'Wednesday'}/>
 }
 
 dateWeatherPanel.story = {

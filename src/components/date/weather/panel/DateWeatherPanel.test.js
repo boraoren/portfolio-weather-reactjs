@@ -11,31 +11,62 @@ describe('date',()=>{
     describe('weather',()=>{
         describe('panel', ()=>{
 
-            it('has weatherIcon component',()=>{
-                const rendered = render(<DateWeatherPanel/>)
+            const renderDateWeatherPanel = () => {
+                const rendered = render(<DateWeatherPanel
+                                    weatherIconType={'wi wi-day-sunny'}
+                                    weatherDegreeValue={'26°'}
+                                    dateTextValue={'Wednesday'}/>)
+
                 const getByTestId = rendered.getByTestId
-                const weatherIcon = getByTestId('weatherIconId')
-                expect(getByTestId('dateWeatherPanel'))
-                .toContainElement(weatherIcon)
+                return {...rendered, getByTestId}
+            }
+
+            describe('weatherIcon component',()=>{
+                it('exists',()=>{
+                    const {getByTestId} = renderDateWeatherPanel()
+                    const weatherIcon = getByTestId('weatherIconId')
+                    expect(getByTestId('dateWeatherPanel'))
+                    .toContainElement(weatherIcon)
+                })
+                it('type is daily sunny',()=>{
+                    const {getByTestId} = renderDateWeatherPanel()
+                    const weatherIcon = getByTestId('weatherIconId')
+                    expect(weatherIcon)
+                    .toHaveClass('wi wi-day-sunny')
+                })
             })
 
-            it('has weatherDegree component', ()=>{
-                const rendered = render(<DateWeatherPanel/>)
-                const getByTestId = rendered.getByTestId
-                const weatherDegree = getByTestId('weatherDegreeId')
-                expect(getByTestId('dateWeatherPanel'))
-                .toContainElement(weatherDegree)
+            describe('weatherDegree component',()=>{
+                it('exists', ()=>{
+                    const {getByTestId} = renderDateWeatherPanel()
+                    const weatherDegree = getByTestId('weatherDegreeId')
+                    expect(getByTestId('dateWeatherPanel'))
+                    .toContainElement(weatherDegree)
+                })
+                it('value is 26°',()=>{
+                    const {getByTestId} = renderDateWeatherPanel()
+                    const weatherDegree = getByTestId('weatherDegreeId')
+                    expect(weatherDegree)
+                    .toHaveTextContent(/^26°$/)
+                })
             })
 
-            it('has dateText component', ()=>{
-                const rendered = render(<DateWeatherPanel/>)
-                const getByTestId = rendered.getByTestId
-                const dateText = getByTestId('dateTextId')
-                expect(getByTestId('dateWeatherPanel'))
-                .toContainElement(dateText)
+            describe('dateText component',()=>{
+                it('exists', ()=>{
+                    const {getByTestId} = renderDateWeatherPanel()
+                    const dateText = getByTestId('dateTextId')
+                    expect(getByTestId('dateWeatherPanel'))
+                    .toContainElement(dateText)
+                })
+                it('value is Wednesday',()=>{
+                    const {getByTestId} = renderDateWeatherPanel()
+                    const dateText = getByTestId('dateTextId')
+                    expect(dateText)
+                    .toHaveTextContent(/^Wednesday$/)
+                })
             })
 
-            
+
         })
     })
 })

@@ -5,13 +5,24 @@ import WeatherIcon from '../../../weather/icon/WeatherIcon'
 import WeatherDegree from '../../../weather/degree/WeatherDegree'
 import DateText from '../../text/DateText'
 
+/**
+* @typedef {Object} Props
+* @property {String} weatherIconType - weather icon type, example: wi wi-day-sunny
+* @property {String} weatherDegreeValue - weather degree value, example: 26°
+* @property {String} dateTextValue - date text value, example: Wednesday
+ */
 
-const DateWeatherPanel = () => {
+/**
+* Date Weather Panel (includes: Weather Icon, Weather Degree, Date Text)
+* @module DateWeatherPanel
+* @param {Props} props
+ */
+const DateWeatherPanel = (props) => {
     return(
         <div data-testid={'dateWeatherPanel'}>
-            <WeatherIcon type={'wi wi-day-sunny'}/>
-            <WeatherDegree value={'26°'}/>
-            <DateText value={'Friday'}/>
+            <WeatherIcon type={props.weatherIconType}/>
+            <WeatherDegree value={props.weatherDegreeValue}/>
+            <DateText value={props.dateTextValue}/>
         </div>
     )
 }
