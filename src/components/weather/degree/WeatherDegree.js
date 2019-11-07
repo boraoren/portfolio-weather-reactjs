@@ -6,6 +6,7 @@ import React from 'react'
 * @typedef {Object} Props
 * @property {String} value - weather degree value, for example 26°
 * @property {String} [size='40px'] - weather degree font size, default is 40px
+* @property {String} color - weather degree color, for example white
  */
 
 /**
@@ -16,7 +17,9 @@ import React from 'react'
 
 const WeatherDegree = (props) => {
     return(
-        <span data-testid={'weatherDegreeId'} style={{fontSize: (props.size || '40px')}}>{props.value}</span>
+        <span data-testid={'weatherDegreeId'}
+                style={{fontSize: (props.size || '40px'), color: props.color}}
+                >{props.value}</span>
     )
 }
 

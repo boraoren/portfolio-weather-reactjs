@@ -58,6 +58,15 @@ describe('date',()=>{
                     expect(weatherDegree)
                     .toHaveTextContent(/^26°$/)
                 })
+
+                it('color is white', ()=>{
+                    const {getByTestId} = renderDateWeatherPanel()
+                    const weatherDegree = getByTestId('weatherDegreeId')
+                    expect(weatherDegree)
+                    .toHaveStyle(`
+                        color:white;
+                    `)
+                })
             })
 
             describe('dateText component',()=>{
