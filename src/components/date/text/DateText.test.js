@@ -9,18 +9,32 @@ expect.extend({toHaveTextContent,toHaveStyle})
 
 describe('date', ()=>{
     describe('text', ()=>{
-        it('value is Monday',()=>{
-            const rendered = render(<DateText value={'Monday'}/>)
+
+        const renderedDateText = () => {
+            const rendered = render(<DateText value={'Monday'} color={'white'}/>)
             const getByTestId = rendered.getByTestId
+            return {getByTestId}
+        }
+
+        it('value is Monday',()=>{
+            const {getByTestId} = renderedDateText()
             expect(getByTestId('dateTextId'))
             .toHaveTextContent(/^Monday$/)
         })
+
         it('size is 62', ()=> {
-            const rendered = render(<DateText value={'Monday'}/>)
-            const getByTestId = rendered.getByTestId
+            const {getByTestId} = renderedDateText()
             expect(getByTestId('dateTextId'))
             .toHaveStyle(`
                 font-size: 62px;
+            `)
+        })
+
+        it('color is white',()=>{
+            const {getByTestId} = renderedDateText()
+            expect(getByTestId('dateTextId'))
+            .toHaveStyle(`
+                color: white;
             `)
         })
     })

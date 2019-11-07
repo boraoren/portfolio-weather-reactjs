@@ -23,7 +23,7 @@ const DateWeatherPanel = (props) => {
         <div data-testid={'dateWeatherPanel'} style={{backgroundColor:'black'}}>
             <WeatherIcon type={props.weatherIconType} color={'white'}/>
             <WeatherDegree value={props.weatherDegreeValue} color={'white'}/>
-            <DateText value={props.dateTextValue}/>
+            <DateText value={props.dateTextValue} color={'white'}/>
         </div>
     )
 }

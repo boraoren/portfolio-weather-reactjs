@@ -7,7 +7,8 @@ export default {title: 'date/text'}
 const jest = {jest:['DateText']}
 
 export const monday = () => {
-    return(<DateText value={'Monday'}/>)
+    return(<DateText value={'Monday'}
+                     color={'black'}/>)
 }
 
 monday.story = {
