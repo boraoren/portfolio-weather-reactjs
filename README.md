@@ -75,3 +75,7 @@ https://github.com/Aljullu/react-lazy-load-image-component#readme
 
 ### Weather Icons
 https://erikflowers.github.io/weather-icons/
+
+### Run storybook
+1. npm run test:generate-output -- --watch
+2. npm run storybook
