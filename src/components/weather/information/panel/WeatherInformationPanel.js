@@ -11,8 +11,8 @@ const WeatherInformationPanel = () =>{
     <div data-testid={'weatherInformationPanelId'}>
         <CityName text={'Melbourne'}/>
         <WeatherIcon type={'wi wi-day-sunny'}/>
-        <WeatherDegree value={''}/>
-        <DateText value={'Melbourne'}/>
+        <WeatherDegree value={'26°'}/>
+        <DateText value={'Wednesday'}/>
     </div>
     )
 }
