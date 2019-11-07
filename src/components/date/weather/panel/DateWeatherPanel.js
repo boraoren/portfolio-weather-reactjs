@@ -21,7 +21,7 @@ import DateText from '../../text/DateText'
 const DateWeatherPanel = (props) => {
     return(
         <div data-testid={'dateWeatherPanel'} style={{backgroundColor:'black'}}>
-            <WeatherIcon type={props.weatherIconType}/>
+            <WeatherIcon type={props.weatherIconType} color={'white'}/>
             <WeatherDegree value={props.weatherDegreeValue}/>
             <DateText value={props.dateTextValue}/>
         </div>

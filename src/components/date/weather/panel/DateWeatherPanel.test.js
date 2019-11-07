@@ -35,6 +35,14 @@ describe('date',()=>{
                     expect(weatherIcon)
                     .toHaveClass('wi wi-day-sunny')
                 })
+                it('color is white',()=>{
+                    const {getByTestId} = renderDateWeatherPanel()
+                    const weatherIcon = getByTestId('weatherIconId')
+                    expect(weatherIcon)
+                    .toHaveStyle(`
+                        color:white;
+                    `)
+                })
             })
 
             describe('weatherDegree component',()=>{
