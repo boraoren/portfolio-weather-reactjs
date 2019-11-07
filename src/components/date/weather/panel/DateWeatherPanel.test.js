@@ -15,7 +15,8 @@ describe('date',()=>{
                 const rendered = render(<DateWeatherPanel
                                     weatherIconType={'wi wi-day-sunny'}
                                     weatherDegreeValue={'26°'}
-                                    dateTextValue={'Wednesday'}/>)
+                                    dateTextValue={'Wednesday'}
+                                    backgroundColor={'black'}/>)
 
                 const getByTestId = rendered.getByTestId
                 return {...rendered, getByTestId}
@@ -66,6 +67,13 @@ describe('date',()=>{
                 })
             })
 
+            it('background color is black',()=>{
+                const {getByTestId} = renderDateWeatherPanel()
+                expect(getByTestId('dateWeatherPanel'))
+                .toHaveStyle(`
+                    background-color: black;
+                `)
+            })
 
         })
     })

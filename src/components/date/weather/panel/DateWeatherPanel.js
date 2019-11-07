@@ -10,6 +10,7 @@ import DateText from '../../text/DateText'
 * @property {String} weatherIconType - weather icon type, example: wi wi-day-sunny
 * @property {String} weatherDegreeValue - weather degree value, example: 26°
 * @property {String} dateTextValue - date text value, example: Wednesday
+* @property {String} backgroundColor - date weather panel background color
  */
 
 /**
@@ -19,7 +20,7 @@ import DateText from '../../text/DateText'
  */
 const DateWeatherPanel = (props) => {
     return(
-        <div data-testid={'dateWeatherPanel'}>
+        <div data-testid={'dateWeatherPanel'} style={{backgroundColor:'black'}}>
             <WeatherIcon type={props.weatherIconType}/>
             <WeatherDegree value={props.weatherDegreeValue}/>
             <DateText value={props.dateTextValue}/>
