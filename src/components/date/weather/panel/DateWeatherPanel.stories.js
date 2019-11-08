@@ -8,6 +8,7 @@ const jest = {jest:['DateWeatherPanel']}
 
 export const dateWeatherPanel = () => {
     return <DateWeatherPanel
+                backgroundColor={'black'}
                 weatherIconType={'wi wi-day-sunny'}
                 weatherDegreeValue={'26°'}
                 dateTextValue={'Wednesday'}/>

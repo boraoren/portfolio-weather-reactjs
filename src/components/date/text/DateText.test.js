@@ -11,7 +11,9 @@ describe('date', ()=>{
     describe('text', ()=>{
 
         const renderedDateText = () => {
-            const rendered = render(<DateText value={'Monday'} color={'white'}/>)
+            const rendered = render(<DateText value={'Monday'}
+                                                color={'white'}
+                                                size={[38,54]}/>)
             const getByTestId = rendered.getByTestId
             return {getByTestId}
         }
@@ -22,11 +24,11 @@ describe('date', ()=>{
             .toHaveTextContent(/^Monday$/)
         })
 
-        it('size is 62', ()=> {
+        it('size is 38', ()=> {
             const {getByTestId} = renderedDateText()
             expect(getByTestId('dateTextId'))
             .toHaveStyle(`
-                font-size: 62px;
+                font-size: 38px;
             `)
         })
 

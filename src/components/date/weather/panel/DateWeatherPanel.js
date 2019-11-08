@@ -4,6 +4,8 @@ import React from 'react'
 import WeatherIcon from '../../../weather/icon/WeatherIcon'
 import WeatherDegree from '../../../weather/degree/WeatherDegree'
 import DateText from '../../text/DateText'
+import styled from 'styled-components'
+import { background, width, flexbox, display} from 'styled-system'
 
 /**
 * @typedef {Object} Props
@@ -20,12 +22,36 @@ import DateText from '../../text/DateText'
  */
 const DateWeatherPanel = (props) => {
     return(
-        <div data-testid={'dateWeatherPanel'} style={{backgroundColor:'black'}}>
-            <WeatherIcon type={props.weatherIconType} color={'white'}/>
-            <WeatherDegree value={props.weatherDegreeValue} color={'white'}/>
-            <DateText value={props.dateTextValue} color={'white'}/>
-        </div>
+        // @ts-ignore
+        <DateWeatherPanelWrapper data-testid={'dateWeatherPanel'}
+                                    background={props.backgroundColor}
+                                    display={'flex'}
+                                    flexDirection={'row'}
+                                    width={[1, 1/2]}>
+
+            <WeatherIcon type={props.weatherIconType}
+            color={'white'}
+            size={[ 50,60 ]}/>
+
+            <WeatherDegree value={props.weatherDegreeValue}
+            color={'white'}
+            position={'relative'}
+            marginLeft={-20}
+            size={[ 30,35 ]}/>
+
+            <DateText value={props.dateTextValue}
+            color={'white'}
+            size={[ 38,55 ]}/>
+
+        </DateWeatherPanelWrapper>
     )
 }
+
+const DateWeatherPanelWrapper = styled.div`
+  ${display};
+  ${background};
+  ${width};
+  ${flexbox};
+`
 
 export default DateWeatherPanel

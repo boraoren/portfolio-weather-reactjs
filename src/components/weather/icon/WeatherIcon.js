@@ -2,12 +2,14 @@
 // @ts-ignore
 import React from 'react'
 import './css/weather-icons.min.css';
+import styled from 'styled-components'
+import { color, fontSize, padding } from 'styled-system'
 
 /**
 * @typedef {Object} Props
-* @property {String} type - weather icon type
-* @property {String} [size='62px'] - weather icon size
-* @property {String} color - weather icon color
+* @property {string} type - weather icon type
+* @property {number[]} size - weather icon size
+* @property {string} [color='black'] - weather icon color
  */
 
 /**
@@ -17,11 +19,25 @@ import './css/weather-icons.min.css';
  */
 const WeatherIcon = (props) => {
     return(
-            <i data-testid={'weatherIconId'}
-                className={props.type}
-                style={{fontSize: props.size || '62px', color: props.color}}/>
+        // @ts-ignore
+        <WeatherIconWrapper
+        data-testid={'weatherIconId'}
+        className={props.type}
+        fontSize={props.size}
+        color={props.color}
+        p={[15]}
+        >
+        </WeatherIconWrapper>
+
     )
 }
+
+const WeatherIconWrapper = styled.i`
+    ${color}
+    ${fontSize}
+    ${padding}
+`
+
 
 export default WeatherIcon
 

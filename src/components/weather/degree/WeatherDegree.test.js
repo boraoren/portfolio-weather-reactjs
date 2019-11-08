@@ -13,7 +13,10 @@ describe('weather', ()=>{
     describe('degree',()=>{
 
         const renderedWeatherDegree = () => {
-            const rendered = render(<WeatherDegree value={'26°'} color={'white'}/>)
+            const rendered = render(<WeatherDegree value={'26°'}
+                                                    size={[40]}
+                                                    color={'white'}/>)
+
             const getByTestId = rendered.getByTestId
             return {getByTestId}
         }

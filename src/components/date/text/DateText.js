@@ -1,11 +1,13 @@
 // @ts-check
 // @ts-ignore
 import React from 'react'
+import styled from 'styled-components'
+import { color, fontSize, flexbox } from 'styled-system'
 
 /**
 * @typedef {Object} Props
 * @property {String} value - date text value
-* @property {String} [size='62px'] - date text size, default is 62px
+* @property {number[]} size - date text size
 * @property {String} color - date text color, example: white
  */
 
@@ -16,8 +18,18 @@ import React from 'react'
  */
 const DateText = (props) => {
     return(
-        <span data-testid={'dateTextId'} style={{fontSize: props.size|| '62px', color: props.color}}>{props.value}</span>
+        // @ts-ignore
+        <DateTextWrapper data-testid={'dateTextId'}
+        fontSize={props.size}
+        alignSelf={'center'}
+        color={props.color}>{props.value}</DateTextWrapper>
     )
 }
+
+const DateTextWrapper = styled.span`
+    ${color}
+    ${fontSize}
+    ${flexbox}
+`
 
 export default DateText
