@@ -26,7 +26,7 @@ describe('date',()=>{
                 it('exists',()=>{
                     const {getByTestId} = renderDateWeatherPanel()
                     const weatherIcon = getByTestId('weatherIconId')
-                    expect(getByTestId('dateWeatherPanel'))
+                    expect(getByTestId('dateWeatherPanelId'))
                     .toContainElement(weatherIcon)
                 })
                 it('type is daily sunny',()=>{
@@ -49,7 +49,7 @@ describe('date',()=>{
                 it('exists', ()=>{
                     const {getByTestId} = renderDateWeatherPanel()
                     const weatherDegree = getByTestId('weatherDegreeId')
-                    expect(getByTestId('dateWeatherPanel'))
+                    expect(getByTestId('dateWeatherPanelId'))
                     .toContainElement(weatherDegree)
                 })
                 it('value is 26°',()=>{
@@ -74,7 +74,7 @@ describe('date',()=>{
                 it('exists', ()=>{
                     const {getByTestId} = renderDateWeatherPanel()
                     const dateText = getByTestId('dateTextId')
-                    expect(getByTestId('dateWeatherPanel'))
+                    expect(getByTestId('dateWeatherPanelId'))
                     .toContainElement(dateText)
                 })
 
@@ -98,7 +98,7 @@ describe('date',()=>{
 
             it('background color is black',()=>{
                 const {getByTestId} = renderDateWeatherPanel()
-                expect(getByTestId('dateWeatherPanel'))
+                expect(getByTestId('dateWeatherPanelId'))
                 .toHaveStyle(`
                     background-color: black;
                 `)

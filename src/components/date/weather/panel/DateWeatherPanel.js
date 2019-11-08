@@ -23,7 +23,7 @@ import { background, width, flexbox, display} from 'styled-system'
 const DateWeatherPanel = (props) => {
     return(
         // @ts-ignore
-        <DateWeatherPanelWrapper data-testid={'dateWeatherPanel'}
+        <DateWeatherPanelWrapper data-testid={'dateWeatherPanelId'}
                                     background={props.backgroundColor}
                                     display={'flex'}
                                     flexDirection={'row'}
