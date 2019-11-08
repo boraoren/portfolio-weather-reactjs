@@ -10,6 +10,7 @@ import { color, fontSize, padding } from 'styled-system'
 * @property {string} type - weather icon type
 * @property {number[]} size - weather icon size
 * @property {string} [color='black'] - weather icon color
+* @property {number[]} [padding=[15]] - weather icon padding
  */
 
 /**
@@ -25,7 +26,7 @@ const WeatherIcon = (props) => {
         className={props.type}
         fontSize={props.size}
         color={props.color}
-        p={[15]}
+        p={props.padding || [15]}
         >
         </WeatherIconWrapper>
 
