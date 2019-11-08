@@ -10,7 +10,10 @@ describe('weather', () => {
         describe('daytime', () => {
 
             const renderedWeatherIcon = () => {
-                const rendered = render(<WeatherIcon type={'wi wi-day-sunny'} color={'white'}/>)
+                const rendered = render(<WeatherIcon type={'wi wi-day-sunny'}
+                                                    color={'white'}
+                                                    size={[30,62]}
+                                                    />)
                 const getByTestId = rendered.getByTestId
                 return {getByTestId}
             }
