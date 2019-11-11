@@ -3,28 +3,36 @@
 import React from 'react'
 import DateWeatherPanel from '../../../date/weather/panel/DateWeatherPanel'
 
-const WeekWeatherPanel = () =>{
+/**
+* @typedef {Object[]} Data
+* @property {string} dateTextValue - 'Friday',
+* @property {string} weatherDegreeValue - '15°',
+* @property {string} weatherIconType - 'wi wi-day-sunny',
+*
+* @typedef {Object} Props
+* @property {Data} data
+ */
 
-    const days = ['Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday']
-
+/**
+* Weekly date information
+* @module WeekWeatherPanel
+* @param {Props} props
+ */
+const WeekWeatherPanel = (props) =>{
 
     return(
+        <>
         <div data-testid={'weekWeatherPanelId'}>
-            {days.map((day)=> <DateWeatherPanel
-                key={day}
+            {props.data.map((day)=> <DateWeatherPanel
+                key={day.dateTextValue}
                 backgroundColor={'black'}
-                weatherIconType={'wi wi-day-sunny'}
-                weatherDegreeValue={'26°'}
-                dateTextValue={day}/>
+                weatherIconType={day.weatherIconType}
+                weatherDegreeValue={day.weatherDegreeValue}
+                dateTextValue={day.dateTextValue}/>
             )}
         </div>
+        </>
     )
 }
 
-export default WeekWeatherPanel
+export default WeekWeatherPanel;
