@@ -27,7 +27,7 @@ const DateWeatherPanel = (props) => {
                                     background={props.backgroundColor}
                                     display={'flex'}
                                     flexDirection={'row'}
-                                    width={[1, 1/2]}>
+                                    >
 
             <WeatherIcon type={props.weatherIconType}
             color={'white'}
@@ -52,6 +52,7 @@ const DateWeatherPanelWrapper = styled.div`
   ${background};
   ${width};
   ${flexbox};
+  height: 14vh;
 `
 
 export default DateWeatherPanel

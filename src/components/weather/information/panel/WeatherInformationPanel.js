@@ -14,9 +14,7 @@ const WeatherInformationPanel = () =>{
     <WeatherInformationPanelWrapper
         data-testid={'weatherInformationPanelId'}
         gridTemplateColumns='1fr 1fr 6fr'
-        gridTemplateRows='1fr 1fr'
-        width={[1, 1/2]}
-    >
+        gridTemplateRows='1fr 1fr'>
         <ComponentWrapper gridColumn={'1/4'}>
             <CityName text={'Melbourne'}
                         size={[50,50]}
