@@ -22,7 +22,7 @@ const WeekWeatherPanel = (props) =>{
 
     return(
         <>
-        <div data-testid={'weekWeatherPanelId'}>
+        <div data-testid={'weekWeatherPanelId'} >
             {props.data.map((day)=> <DateWeatherPanel
                 key={day.dateTextValue}
                 backgroundColor={'black'}

@@ -5,7 +5,7 @@ import WeatherIcon from '../../../weather/icon/WeatherIcon'
 import WeatherDegree from '../../../weather/degree/WeatherDegree'
 import DateText from '../../text/DateText'
 import styled from 'styled-components'
-import { background, width, flexbox, display} from 'styled-system'
+import { background, width, flexbox, display, height} from 'styled-system'
 
 /**
 * @typedef {Object} Props
@@ -26,6 +26,7 @@ const DateWeatherPanel = (props) => {
         <DateWeatherPanelWrapper data-testid={'dateWeatherPanelId'}
                                     background={props.backgroundColor}
                                     display={'flex'}
+                                    height={["14.2vh"]}
                                     flexDirection={'row'}>
 
             <WeatherIcon type={props.weatherIconType}
@@ -51,7 +52,7 @@ const DateWeatherPanelWrapper = styled.div`
   ${background};
   ${width};
   ${flexbox};
-  height: 14vh;
+  ${height}
 `
 
 export default DateWeatherPanel

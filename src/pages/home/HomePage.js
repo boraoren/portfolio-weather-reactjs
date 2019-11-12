@@ -5,7 +5,7 @@ import CityImage from '../../components/city/image/CityImage'
 import WeatherInformationPanel from '../../components/weather/information/panel/WeatherInformationPanel'
 import WeekWeatherPanel from '../../components/week/weather/panel/WeekWeatherPanel'
 import styled from 'styled-components'
-import { flexbox, width, maxHeight, minWidth } from 'styled-system'
+import { flexbox, width, maxHeight, minWidth,flexWrap,height } from 'styled-system'
 
 /**
 * @typedef {Object} Props
@@ -19,14 +19,17 @@ const HomePage = (props) => {
     return(
         <HomePageWrapper data-testid={'homePageId'} flexWrap='wrap'>
 
-            <HomePageLeftPanelWrapper  width={[1,1/2]} minWidth={[ 350, 180 ]}>
+            <HomePageLeftPanelWrapper  width={[1,1/2]}>
+                
                 <CityImage src={'static/media/melbourne'}/>
+                
+                
                 <WeatherInformationWrapper width={[1,1/2]}>
                     <WeatherInformationPanel/>
                 </WeatherInformationWrapper>
             </HomePageLeftPanelWrapper>
             
-            <WeekWeatherPanelWrapper width={[1,1/2]} minWidth={[ 350, 180 ]}>
+            <WeekWeatherPanelWrapper width={[1,1/2]}>
                 <WeekWeatherPanel data={props.weekWeatherPanelData}/>
             </WeekWeatherPanelWrapper>
 
@@ -36,20 +39,15 @@ const HomePage = (props) => {
 
 const HomePageWrapper = styled.div`
     display: flex;
-    ${flexbox};
-    ${maxHeight};
-    ${minWidth};
+    ${flexWrap};
 `
 
 const HomePageLeftPanelWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    ${flexbox};
+    justify-content: center;    
     ${width};
-    ${maxHeight};
-    ${minWidth};
 `
 
 const WeekWeatherPanelWrapper = styled.div`
