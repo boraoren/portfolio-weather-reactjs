@@ -26,8 +26,7 @@ const DateWeatherPanel = (props) => {
         <DateWeatherPanelWrapper data-testid={'dateWeatherPanelId'}
                                     background={props.backgroundColor}
                                     display={'flex'}
-                                    flexDirection={'row'}
-                                    >
+                                    flexDirection={'row'}>
 
             <WeatherIcon type={props.weatherIconType}
             color={'white'}

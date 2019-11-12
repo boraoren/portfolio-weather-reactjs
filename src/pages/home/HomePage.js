@@ -5,7 +5,7 @@ import CityImage from '../../components/city/image/CityImage'
 import WeatherInformationPanel from '../../components/weather/information/panel/WeatherInformationPanel'
 import WeekWeatherPanel from '../../components/week/weather/panel/WeekWeatherPanel'
 import styled from 'styled-components'
-import { flexbox, width, maxHeight } from 'styled-system'
+import { flexbox, width, maxHeight, minWidth } from 'styled-system'
 
 /**
 * @typedef {Object} Props
@@ -17,21 +17,16 @@ import { flexbox, width, maxHeight } from 'styled-system'
  */
 const HomePage = (props) => {
     return(
-        <HomePageWrapper data-testid={'homePageId'}>
+        <HomePageWrapper data-testid={'homePageId'} flexWrap='wrap'>
 
-            <HomePageLeftPanelWrapper  width={1/2}>
-
-                <CityImageWrapper  width={1/2}>
-                    <CityImage src={'static/media/melbourne'}/>
-                </CityImageWrapper>
-
-                <WeatherInformationWrapper width={[1/2]}>
+            <HomePageLeftPanelWrapper  width={[1,1/2]} minWidth={[ 350, 180 ]}>
+                <CityImage src={'static/media/melbourne'}/>
+                <WeatherInformationWrapper width={[1,1/2]}>
                     <WeatherInformationPanel/>
                 </WeatherInformationWrapper>
-
             </HomePageLeftPanelWrapper>
-
-            <WeekWeatherPanelWrapper width={[1/2]}>
+            
+            <WeekWeatherPanelWrapper width={[1,1/2]} minWidth={[ 350, 180 ]}>
                 <WeekWeatherPanel data={props.weekWeatherPanelData}/>
             </WeekWeatherPanelWrapper>
 
@@ -41,9 +36,9 @@ const HomePage = (props) => {
 
 const HomePageWrapper = styled.div`
     display: flex;
-    flex-direction: row;
     ${flexbox};
     ${maxHeight};
+    ${minWidth};
 `
 
 const HomePageLeftPanelWrapper = styled.div`
@@ -52,20 +47,19 @@ const HomePageLeftPanelWrapper = styled.div`
     ${flexbox};
     ${width};
     ${maxHeight};
+    ${minWidth};
 `
 
 const WeekWeatherPanelWrapper = styled.div`
     ${width};
     ${maxHeight};
-`
-
-const CityImageWrapper = styled.div`
-    ${maxHeight};
-    ${width};
+    ${minWidth};
 `
 
 const WeatherInformationWrapper = styled.div`
     position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
     ${width};
 `
 

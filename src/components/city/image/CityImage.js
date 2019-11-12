@@ -4,8 +4,6 @@ import React from 'react'
 import styled from 'styled-components'
 import {width} from 'styled-system'
 
-const Image = styled.img`
-`
 /**
  * @typedef {Object} Props
  * @property {string} src - image url
@@ -31,5 +29,13 @@ const CityImage = (props) => {
             />
     )
 }
+
+
+const Image = styled.img`
+    height: 98vh;
+    width: 100%;
+    object-fit: cover;
+`
+
 
 export default CityImage

@@ -17,26 +17,26 @@ const WeatherInformationPanel = () =>{
         gridTemplateRows='1fr 1fr'>
         <ComponentWrapper gridColumn={'1/4'}>
             <CityName text={'Melbourne'}
-                        size={[50,50]}
+                        size={[40,60,65]}
                         color={'white'}/>
         </ComponentWrapper>
 
         <ComponentWrapper>
             <WeatherIcon type={'wi wi-day-sunny'}
-                        size={[40,50]}
+                        size={[40,50,55]}
                         padding={[0]}
                         color={'white'}/>
         </ComponentWrapper>
 
         <ComponentWrapper gridColumn={'2/3'}>
             <WeatherDegree value={'26°'}
-                        size={[40,50]}
+                        size={[40,50,55]}
                         color={'white'}/>
         </ComponentWrapper>
 
         <ComponentWrapper gridColumn={'3/4'}>
             <DateText value={'Wednesday'}
-                        size={[40, 50]}
+                        size={[40, 50,55]}
                         color={'white'}/>
         </ComponentWrapper>
 
