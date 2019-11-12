@@ -30,17 +30,17 @@ const DateWeatherPanel = (props) => {
 
             <WeatherIcon type={props.weatherIconType}
             color={'white'}
-            size={[ 50,60 ]}/>
+            size={[ 50,40 ]}/>
 
             <WeatherDegree value={props.weatherDegreeValue}
             color={'white'}
             position={'relative'}
             marginLeft={-20}
-            size={[ 30,35 ]}/>
+            size={[ 30,30 ]}/>
 
             <DateText value={props.dateTextValue}
             color={'white'}
-            size={[ 38,55 ]}/>
+            size={[ 38,45 ]}/>
 
         </DateWeatherPanelWrapper>
     )

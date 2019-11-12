@@ -44,6 +44,8 @@ const HomePageWrapper = styled.div`
 const HomePageLeftPanelWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     ${flexbox};
     ${width};
     ${maxHeight};
@@ -58,8 +60,6 @@ const WeekWeatherPanelWrapper = styled.div`
 
 const WeatherInformationWrapper = styled.div`
     position: absolute;
-    bottom: 0;
-    padding-bottom: 20px;
     ${width};
 `
 

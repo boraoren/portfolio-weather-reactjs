@@ -2,7 +2,7 @@
 // @ts-ignore
 import React from 'react'
 import styled from 'styled-components'
-import {width} from 'styled-system'
+import {width, height} from 'styled-system'
 
 /**
  * @typedef {Object} Props
@@ -25,6 +25,7 @@ const CityImage = (props) => {
             <Image data-testid={'cityImageId'}
             src={small}
             alt={defaultAlt}
+            height={['44vh','98vh']}
             srcSet={`${small} 300w, ${medium} 768w, ${large} 1280w`}
             />
     )
@@ -32,7 +33,7 @@ const CityImage = (props) => {
 
 
 const Image = styled.img`
-    height: 98vh;
+    ${height}
     width: 100%;
     object-fit: cover;
 `

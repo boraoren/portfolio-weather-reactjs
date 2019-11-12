@@ -48,6 +48,7 @@ const WeatherInformationPanelWrapper = styled.div`
     display: grid
     ${width};
     background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
 `
 
 /**
