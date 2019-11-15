@@ -79,3 +79,6 @@ https://erikflowers.github.io/weather-icons/
 ### Run storybook
 1. npm run test:generate-output -- --watch
 2. npm run storybook
+
+### User
+weather-developer
