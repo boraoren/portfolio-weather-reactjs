@@ -2,15 +2,17 @@
 // @ts-ignore
 import React from 'react'
 import DateWeatherPanel from '../../../date/weather/panel/DateWeatherPanel'
+import moment from 'moment'
+import _ from 'underscore'
 
 /**
-* @typedef {Object[]} Data
+* @typedef {Object[]} Days
 * @property {string} dateTextValue - 'Friday',
-* @property {string} weatherDegreeValue - '15°',
+* @property {number} weatherDegreeValue - 15,
 * @property {string} weatherIconType - 'wi wi-day-sunny',
 *
 * @typedef {Object} Props
-* @property {Data} data
+* @property {Days} days
  */
 
 /**
@@ -20,16 +22,22 @@ import DateWeatherPanel from '../../../date/weather/panel/DateWeatherPanel'
  */
 const WeekWeatherPanel = (props) =>{
 
+
+    const groupBy = (days) => _.groupBy(days, function(day) {
+          return moment(day.dateTextValue).startOf('day').format();
+    });
+
+    const groupByDays = groupBy(props.days)
+    
+
     return(
         <>
-        <div data-testid={'weekWeatherPanelId'} >
-            {props.data.map((day)=> <DateWeatherPanel
-                key={day.dateTextValue}
-                backgroundColor={'black'}
-                weatherIconType={day.weatherIconType}
-                weatherDegreeValue={day.weatherDegreeValue}
-                dateTextValue={day.dateTextValue}/>
-            )}
+        <div data-testid={'weekWeatherPanelId'}>
+            {Object.keys(groupByDays).map(key=>
+                <DateWeatherPanel
+                    weatherHours={groupByDays[key]}
+                    backgroundColor={'black'}/>
+            )}                
         </div>
         </>
     )

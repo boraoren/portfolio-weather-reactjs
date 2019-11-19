@@ -8,29 +8,33 @@ import styled from 'styled-components'
 import { flexbox, width, maxHeight, minWidth,flexWrap,height } from 'styled-system'
 
 /**
+* @typedef {Object} Data
+* @property {Object[]} days
+*
 * @typedef {Object} Props
-* @property {Object[]} weekWeatherPanelData
+* @property {Data} data
  */
 
 /**
 * @param {Props} props
  */
 const HomePage = (props) => {
+
+    console.log("DATA",props.data?props.data.days:[])
+
     return(
         <HomePageWrapper data-testid={'homePageId'} flexWrap='wrap'>
-
             <HomePageLeftPanelWrapper  width={[1,1/2]}>
-                
-                <CityImage src={'static/media/melbourne'}/>
-                
-                
+
+                <CityImage src="static/media/melbourne"/>
+
                 <WeatherInformationWrapper width={[1,1/2]}>
                     <WeatherInformationPanel/>
                 </WeatherInformationWrapper>
             </HomePageLeftPanelWrapper>
             
             <WeekWeatherPanelWrapper width={[1,1/2]}>
-                <WeekWeatherPanel data={props.weekWeatherPanelData}/>
+                <WeekWeatherPanel data={props.data?props.data.days:[]}/>
             </WeekWeatherPanelWrapper>
 
         </HomePageWrapper>
