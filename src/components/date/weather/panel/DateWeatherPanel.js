@@ -28,14 +28,15 @@ const DateWeatherPanel = (props) => {
 
     const {weatherHours,backgroundColor} = props
 
-    console.log("weatherHours",weatherHours)
-
-
     const averageDegreeBy = (weatherHours) => {
             const result = _.reduce(weatherHours, function(memo, v) {
                 return memo + v.weatherDegreeValue;
             }, 0) / weatherHours.length
             return Math.floor(result)
+    }
+
+    const mostFrequentlyUseWord = (array) => {
+        return _.chain(array).countBy('weatherIconType').pairs().max(_.last).head().value()
     }
 
     return(
@@ -46,7 +47,7 @@ const DateWeatherPanel = (props) => {
                                     height={["14.2vh"]}
                                     flexDirection={'row'}>
 
-            <WeatherIcon type={weatherHours[0].weatherIconType}
+            <WeatherIcon type={mostFrequentlyUseWord(weatherHours)}
             color={'white'}
             size={[ 50,40 ]}/>
 
