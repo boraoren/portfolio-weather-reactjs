@@ -20,8 +20,6 @@ import { flexbox, width, maxHeight, minWidth,flexWrap,height } from 'styled-syst
  */
 const HomePage = (props) => {
 
-    console.log("DATA",props.data?props.data.days:[])
-
     return(
         <HomePageWrapper data-testid={'homePageId'} flexWrap='wrap'>
             <HomePageLeftPanelWrapper  width={[1,1/2]}>

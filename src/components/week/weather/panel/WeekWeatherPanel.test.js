@@ -250,11 +250,12 @@ const days=[{
 describe('week',()=>{
     describe('weather',()=>{
         describe('panel',()=>{
-            it('has 7 dateWeatherPanel components',()=>{
+            it('has 5 dateWeatherPanel components',()=>{
                 const rendered = render(<WeekWeatherPanel days={days}/>)
                 const getAllByTestId = rendered.getAllByTestId
-                expect(getAllByTestId('dateWeatherPanelId')).toHaveLength(6)
+                expect(getAllByTestId('dateWeatherPanelId')).toHaveLength(5)
             })
         })
     })
 })
+

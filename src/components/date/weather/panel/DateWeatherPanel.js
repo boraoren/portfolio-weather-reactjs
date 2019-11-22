@@ -6,12 +6,16 @@ import WeatherDegree from '../../../weather/degree/WeatherDegree'
 import DateText from '../../text/DateText'
 import styled from 'styled-components'
 import { color, width, flexbox, display, height} from 'styled-system'
+import _ from 'underscore'
 
 /**
-* @typedef {Object} Props
+* @typedef {Object} WeatherHour
 * @property {String} weatherIconType - weather icon type, example: wi wi-day-sunny
 * @property {String} weatherDegreeValue - weather degree value, example: 26°
 * @property {String} dateTextValue - date text value, example: Wednesday
+
+* @typedef {Object} Props
+* @property {WeatherHour[]} weatherHours 
 * @property {String} backgroundColor - date weather panel background color
  */
 
@@ -21,6 +25,19 @@ import { color, width, flexbox, display, height} from 'styled-system'
 * @param {Props} props
  */
 const DateWeatherPanel = (props) => {
+
+    const {weatherHours,backgroundColor} = props
+
+    console.log("weatherHours",weatherHours)
+
+
+    const averageDegreeBy = (weatherHours) => {
+            const result = _.reduce(weatherHours, function(memo, v) {
+                return memo + v.weatherDegreeValue;
+            }, 0) / weatherHours.length
+            return Math.floor(result)
+    }
+
     return(
         // @ts-ignore
         <DateWeatherPanelWrapper data-testid={'dateWeatherPanelId'}
@@ -29,17 +46,17 @@ const DateWeatherPanel = (props) => {
                                     height={["14.2vh"]}
                                     flexDirection={'row'}>
 
-            <WeatherIcon type={props.weatherIconType}
+            <WeatherIcon type={weatherHours[0].weatherIconType}
             color={'white'}
             size={[ 50,40 ]}/>
 
-            <WeatherDegree value={props.weatherDegreeValue}
+            <WeatherDegree value={""+averageDegreeBy(weatherHours)}
             color={'white'}
             position={'relative'}
             marginLeft={-20}
             size={[ 30,30 ]}/>
 
-            <DateText value={props.dateTextValue}
+            <DateText value={weatherHours[0].dateTextValue}
             color={'white'}
             size={[ 38,45 ]}/>
 
