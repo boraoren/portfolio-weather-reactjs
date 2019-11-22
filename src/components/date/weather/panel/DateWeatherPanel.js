@@ -7,6 +7,7 @@ import DateText from '../../text/DateText'
 import styled from 'styled-components'
 import { color, width, flexbox, display, height} from 'styled-system'
 import _ from 'underscore'
+import moment from 'moment'
 
 /**
 * @typedef {Object} WeatherHour
@@ -28,6 +29,9 @@ const DateWeatherPanel = (props) => {
 
     const {weatherHours,backgroundColor} = props
 
+    
+    console.log(weatherHours)
+
     const averageDegreeBy = (weatherHours) => {
             const result = _.reduce(weatherHours, function(memo, v) {
                 return memo + v.weatherDegreeValue;
@@ -37,6 +41,13 @@ const DateWeatherPanel = (props) => {
 
     const mostFrequentlyUseWord = (array) => {
         return _.chain(array).countBy('weatherIconType').pairs().max(_.last).head().value()
+    }
+
+    const getDay = (date) =>{
+        
+        const dateMoment = moment(date*1000);
+        const dow = dateMoment.day();
+        return dateMoment.format('dddd')
     }
 
     return(
@@ -57,7 +68,7 @@ const DateWeatherPanel = (props) => {
             marginLeft={-20}
             size={[ 30,30 ]}/>
 
-            <DateText value={weatherHours[0].dateTextValue}
+            <DateText value={""+getDay(weatherHours[0].date)}
             color={'white'}
             size={[ 38,45 ]}/>
 
